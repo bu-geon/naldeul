@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Main from './pages/main';
+
+import Footer from './pages/_shared/Footer';
+import Header from './pages/_shared/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Header />
+				<Routes>
+					<Route index element={<Main />} />
+					<Route path="*" element={<div>잘못된 접근입니다.</div>} />
+				</Routes>
+				<Footer />
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
