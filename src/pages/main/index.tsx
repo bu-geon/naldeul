@@ -1,10 +1,12 @@
-const Main = () => {
+import Carousel from './carousel'
+
+const MainPage = () => {
   return (
     <>
-      <h1>Main</h1>
+      <Carousel />
       <p>Content</p>
     </>
   )
 }
 
-export default Main
+export default MainPage
