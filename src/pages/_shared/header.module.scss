@@ -1,0 +1,41 @@
+header {
+  // position: fixed;
+  // top: 0;
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+  color: black;
+
+  h1 {
+    font-size: 36px;
+    color: inherit;
+  }
+
+  nav {
+    ul {
+      display: flex;
+
+      li {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.logo {
+  color: inherit;
+}
+
+.nav {
+  color: inherit;
+
+  &:hover {
+    font-weight: 800;
+    border-bottom: 1px solid black;
+  }
+}
