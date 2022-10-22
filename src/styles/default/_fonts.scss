@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body,
 button,
 input,
 textarea {
-	font-family: 'Spoqa Han Sans Neo', Inter, Arial, PingFangSC-Regular, 'Microsoft YaHei', sans-serif;
-	font-feature-settings: 'tnum';
+  font-family: 'Pretendard-Regular', 'Spoqa Han Sans Neo', Inter, Arial, PingFangSC-Regular, 'Microsoft YaHei',
+    sans-serif;
+  font-feature-settings: 'tnum';
 }
 
 input[type='number'] {
-	font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum';
 
-	&::-webkit-outer-spin-button,
-	&::-webkit-inner-spin-button {
-		margin: 0;
-		-webkit-appearance: none;
-	}
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
 }
