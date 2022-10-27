@@ -1,3 +1,3 @@
-import Introduction from './Introduction'
+import IntroductionPage from './Introduction.page'
 
-export default Introduction
+export default IntroductionPage
