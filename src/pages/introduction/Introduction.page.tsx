@@ -1,4 +1,4 @@
-const Introduction = () => {
+const IntroductionPage = () => {
   return (
     <>
       <h1>소개</h1>
@@ -7,4 +7,4 @@ const Introduction = () => {
   )
 }
 
-export default Introduction
+export default IntroductionPage
