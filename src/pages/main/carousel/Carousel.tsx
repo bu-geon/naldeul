@@ -38,21 +38,19 @@ const Carousel = () => {
   }
 
   return (
-    <>
-      <ul className={cx('carouselWrapper')}>
-        {IMAGES.map(({ id, url }) => (
-          <li className={cx({ invisible: currentIndex !== id })} key={id}>
-            <img className={cx('carouselItem')} src={url} alt='carousel' />
-          </li>
-        ))}
-      </ul>
-      <button type='button'>
-        <ChevronLeft width='30px' height='30px' onClick={handleClickPreviousCarousel} />
+    <ul className={cx('carouselWrapper')}>
+      {IMAGES.map(({ id, url }) => (
+        <li className={cx({ invisible: currentIndex !== id })} key={id}>
+          <img className={cx('carouselItem')} src={url} alt='carousel' />
+        </li>
+      ))}
+      <button className={cx('previousButton')} type='button'>
+        <ChevronLeft width='40px' height='40px' onClick={handleClickPreviousCarousel} />
       </button>
-      <button type='button'>
-        <ChevronRight width='30px' height='30px' onClick={handleClickNextCarousel} />
+      <button className={cx('nextButton')} type='button'>
+        <ChevronRight width='40px' height='40px' onClick={handleClickNextCarousel} />
       </button>
-    </>
+    </ul>
   )
 }
 
