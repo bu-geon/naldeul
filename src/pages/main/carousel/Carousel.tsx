@@ -38,19 +38,33 @@ const Carousel = () => {
   }
 
   return (
-    <ul className={cx('carouselWrapper')}>
-      {IMAGES.map(({ id, url }) => (
-        <li className={cx({ invisible: currentIndex !== id })} key={id}>
-          <img className={cx('carouselItem')} src={url} alt='carousel' />
-        </li>
-      ))}
-      <button className={cx('previousButton')} type='button'>
-        <ChevronLeft width='40px' height='40px' onClick={handleClickPreviousCarousel} />
-      </button>
-      <button className={cx('nextButton')} type='button'>
-        <ChevronRight width='40px' height='40px' onClick={handleClickNextCarousel} />
-      </button>
-    </ul>
+    <section>
+      <ul className={cx('container')}>
+        {IMAGES.map(({ id, url }) => (
+          <li className={cx({ invisible: currentIndex !== id })} key={id}>
+            <img className={cx('carouselItem')} src={url} alt='carousel' />
+          </li>
+        ))}
+        <div className={cx('introduction')}>
+          <p className={cx('contact')}>상담전화 070-4282-0882</p>
+          <p className={cx('brandName')}>날들</p>
+          <p className={cx('brandSummary')}>장례의 모든 것</p>
+          <pre className={cx('description')}>
+            고인의 마지막을 <br />
+            정성껏 준비하겠습니다.
+          </pre>
+          <button className={cx('consultButton')} type='button'>
+            상담 신청하기
+          </button>
+        </div>
+        <button className={cx('direction', 'previousButton')} type='button'>
+          <ChevronLeft width='40px' height='40px' onClick={handleClickPreviousCarousel} />
+        </button>
+        <button className={cx('direction', 'nextButton')} type='button'>
+          <ChevronRight width='40px' height='40px' onClick={handleClickNextCarousel} />
+        </button>
+      </ul>
+    </section>
   )
 }
 

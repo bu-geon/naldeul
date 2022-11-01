@@ -1,40 +1,32 @@
-import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 
 import styles from './category.module.scss'
 
-import Card from 'components/card/Card'
-
 const cx = classNames.bind(styles)
 
-const CATEGORIES = [
-  {
-    title: '봉안(납골)당',
-    path: 'charnel_house',
-    imageUrl: 'https://www.100ssd.co.kr/news/photo/202206/88166_68319_1116.jpg',
-  },
-  {
-    title: '수목장(자연&평장)',
-    path: 'arboretum',
-    imageUrl: 'http://image.auction.co.kr/itemimage/1f/da/62/1fda62fb76.jpg',
-  },
-  {
-    title: '봉안(납골)묘',
-    path: 'mausoleum',
-    imageUrl:
-      'https://w.namu.la/s/fd8994ca9ac1649bb20af5246ca15ed7a2414d398dedc49231eba7123213e295c45f6f787b33640dd6d424154f1820e5360f92be12c9fcb830c80c2b6e092e8682b8a14398332cdf5e6c4d1bd59ed3366ed8caf4a13d0eb7a14b55e11e9b3bde',
-  },
-]
+const CATEGORY_MAP = {
+  납골당: ['남양주 납골당', '분당 납골당', '양주 납골당', '일산 납골당', '전주 납골당', '대구 납골당'],
+  수목장: ['남양주 수목장', '분당 수목장', '양주 수목장', '일산 수목장'],
+  공원묘지: ['남양주 공원묘지', '분당 공원묘지', '양주 공원묘지', '일산 공원묘지'],
+}
 
-const Category = () => {
+interface Props {
+  title: '납골당' | '수목장' | '공원묘지'
+  description: string
+}
+
+const Category = ({ title, description }: Props) => {
   return (
-    <section>
-      <ul className={cx('categories')}>
-        {CATEGORIES.map(({ title, path, imageUrl }) => (
-          <li key={title}>
-            <Link to={path}>
-              <Card title={title} imageUrl={imageUrl} />
-            </Link>
+    <section className={cx('container')}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <ul>
+        {CATEGORY_MAP[title].map((place) => (
+          <li key={place}>
+            <article className={cx('place')}>
+              <img src='https://i.ytimg.com/vi/STTEIUrP9y8/maxresdefault.jpg' alt='' />
+              <p>{place}</p>
+            </article>
           </li>
         ))}
       </ul>
