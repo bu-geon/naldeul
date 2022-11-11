@@ -1,6 +1,6 @@
 @use '../../styles' as styles;
 
-header {
+.header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,11 +14,6 @@ header {
   color: black;
   z-index: 10;
 
-  @include styles.breakpoint(mobile) {
-    background-color: plum;
-    font-size: 0.5em;
-  }
-
   h1 {
     font-size: 36px;
     color: inherit;
@@ -31,6 +26,47 @@ header {
       li {
         margin-left: 20px;
       }
+    }
+  }
+
+  @include styles.breakpoint(mobile) {
+    display: block;
+
+    h1 {
+      font-size: 20px;
+      line-height: 40px;
+
+      strong {
+        font-size: 26px;
+        font-weight: 700;
+      }
+    }
+
+    nav {
+      visibility: hidden;
+      position: absolute;
+      left: 10px;
+      top: 90px;
+      padding: 14px;
+      background-color: beige;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+    }
+
+    .isShow {
+      visibility: visible;
     }
   }
 }
