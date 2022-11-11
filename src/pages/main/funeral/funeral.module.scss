@@ -1,3 +1,5 @@
+@use '../../../styles' as styles;
+
 .services {
   padding: 0 0 40px;
   text-align: left;
@@ -17,14 +19,21 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @include styles.breakpoint(mobile) {
+    padding: 0 12px 40px 12px;
+    .container {
+      flex-direction: column;
+    }
+  }
 }
 
 .service {
   width: 50%;
-  margin: 0 20px;
   padding-bottom: 20px;
   border-radius: 6px;
   border: solid 1px #c1c1c1;
+  margin-bottom: 20px;
 
   dt {
     margin: 20px 0 30px;
@@ -37,6 +46,10 @@
     padding-left: 27px;
     font-size: 18px;
   }
+
+  @include styles.breakpoint(mobile) {
+    width: inherit;
+  }
 }
 
 .funeralImage {
@@ -45,4 +58,8 @@
   object-fit: cover;
   object-position: center;
   border-radius: 6px 6px 0 0;
+
+  @include styles.breakpoint(mobile) {
+    height: 200px;
+  }
 }
