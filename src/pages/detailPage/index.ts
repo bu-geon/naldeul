@@ -1,3 +1,3 @@
-import DetailPage from './Detail.page'
+import Detail from './Detail.page'
 
-export default DetailPage
+export default Detail

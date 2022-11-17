@@ -1,0 +1,45 @@
+@use '../../styles/index.scss' as styles;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(4, 150px);
+  grid-template-areas:
+    'enlarge enlarge enlarge enlarge button'
+    'enlarge enlarge enlarge enlarge button'
+    'enlarge enlarge enlarge enlarge button'
+    'enlarge enlarge enlarge enlarge button';
+  row-gap: 5px;
+  column-gap: 5px;
+  justify-content: center;
+
+  @include styles.breakpoint(mobile) {
+    grid-template-columns: repeat(4, 25vw);
+    grid-template-rows: repeat(5, calc(25vw));
+    grid-template-areas:
+      'enlarge enlarge enlarge enlarge'
+      'enlarge enlarge enlarge enlarge'
+      'enlarge enlarge enlarge enlarge'
+      'enlarge enlarge enlarge enlarge'
+      'button button button button';
+  }
+}
+
+.enlargeImage {
+  grid-area: enlarge;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wrapper {
+  grid-area: button;
+}
+
+.subImage {
+  grid-area: button;
+}
+
+.fitImageSize {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
