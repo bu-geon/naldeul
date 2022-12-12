@@ -112,10 +112,10 @@ const Category = ({ title, description }: Props) => {
         {CATEGORY_MAP[title]
           .filter(({ region }) => selectedRegion === '전체' || region === selectedRegion)
           .map(({ name, region }) => (
-            <Link to={`${pathTo}/${name}`} key={name}>
+            <Link to={`${pathTo}/${name}`} state={{ title, region, name }} key={name}>
               <li>
                 <article className={cx('place')}>
-                  <img src={`${process.env.PUBLIC_URL}imgs/${title}/${region}/${name}/main.jpg`} alt='' />
+                  <img src={`${process.env.PUBLIC_URL}/imgs/${title}/${region}/${name}/main.jpg`} alt='' />
                   <p>{name}</p>
                 </article>
               </li>
