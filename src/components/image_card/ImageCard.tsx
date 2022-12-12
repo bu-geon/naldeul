@@ -7,13 +7,14 @@ const cx = classNames.bind(styles)
 interface Props {
   name: string
   category: string
+  region: string
 }
 
-const ImageCard = ({ name, category }: Props) => {
+const ImageCard = ({ name, category, region }: Props) => {
   return (
     <article className={cx('imageCard')}>
       <div className={cx('frame')}>
-        <img src={`${process.env.PUBLIC_URL}imgs/${category}/${name}/대표사진.jpeg`} alt='' />
+        <img src={`${process.env.PUBLIC_URL}/imgs/${category}/${region}/${name}/main.jpg`} alt='' />
       </div>
       <div>
         <p>{name}</p>
