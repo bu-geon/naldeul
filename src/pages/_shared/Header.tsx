@@ -3,7 +3,7 @@ import classNames from 'classnames/bind'
 import { useMediaQuery } from 'react-responsive'
 
 import styles from './header.module.scss'
-import { MenuSvg } from 'assets/svgs'
+import { MenuSvg, LogoIcon } from 'assets/svgs'
 import { useState } from 'react'
 
 const cx = classNames.bind(styles)
@@ -18,26 +18,27 @@ export const PAGES = {
 
 const Header = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 43.75em)' })
-  const [isShow, setIsShow] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState(false)
 
   const handleClickMenu = () => {
-    setIsShow((prev) => !prev)
+    setToggleMenu((prev) => !prev)
+  }
+
+  const handleCloseMenu = () => {
+    setToggleMenu(false)
   }
 
   return (
     <header className={cx('header')}>
       {isMobile && <MenuSvg className={cx('menu')} onClick={handleClickMenu} />}
-      <Link className={cx('logo')} to='/'>
-        <h1>
-          {isMobile && '책임있는 장례 서비스 '}
-          <strong>날들</strong>
-        </h1>
+      <Link to='/'>
+        <LogoIcon className={cx('logo')} />
       </Link>
-      <nav className={cx({ isShow })}>
+      <nav className={cx({ toggleMenu })}>
         <ul>
           {Object.values(PAGES).map(({ title, path }) => (
             <li key={title}>
-              <NavLink className={(isActive) => cx('nav', { isActive })} to={`${path}`}>
+              <NavLink className={(isActive) => cx('nav', { isActive })} to={`${path}`} onClick={handleCloseMenu}>
                 {title}
               </NavLink>
             </li>

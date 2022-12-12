@@ -13,6 +13,10 @@ const Footer = () => {
     e.preventDefault()
   }
 
+  const handleCall = () => {
+    document.location.href = 'tel:07042820882'
+  }
+
   return (
     <footer>
       {!isMobile && (
@@ -57,7 +61,7 @@ const Footer = () => {
       )}
       {isMobile && (
         <div className={cx('mobile')}>
-          <button className={cx('callButton')} type='button'>
+          <button className={cx('callButton')} type='button' onClick={handleCall}>
             전화 연결
           </button>
           <button className={cx('consultButton')} type='button'>
