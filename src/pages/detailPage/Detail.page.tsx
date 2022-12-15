@@ -1,8 +1,8 @@
-import { MouseEvent, useState } from 'react'
+import { MouseEvent, useEffect, useMemo, useState } from 'react'
 import classNames from 'classnames/bind'
+import { useLocation } from 'react-router-dom'
 
 import styles from './detail.module.scss'
-import { useLocation } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
@@ -18,6 +18,18 @@ const Detail = () => {
     setEnlargedImageSrc(imageSrcs[index])
   }
 
+  const [featureList, setFeatureList] = useState([])
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/imgs/${title}/${region}/${name}/features.json`)
+      .then((res) => res.text())
+      .then((json) => {
+        const { features } = JSON.parse(json)
+        setFeatureList(features)
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <p>{name}</p>
@@ -30,6 +42,14 @@ const Detail = () => {
         ))}
       </div>
       <p>특징</p>
+      <ul>
+        {featureList.map(({ summary, description }) => (
+          <li key={summary}>
+            <p>{summary}</p>
+            <p>{description}</p>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
