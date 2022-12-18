@@ -9,12 +9,14 @@ import CharnelHousePage from 'pages/charnel_house'
 import ArboretumPage from 'pages/arboretum'
 import MausoleumPage from 'pages/mausoleum'
 import Detail from 'pages/detailPage'
+import ScrollToTop from 'components/scrollToTop'
 
 const App = () => {
   return (
     <div className={styles.app}>
       <Header />
       <main>
+        <ScrollToTop />
         <Routes>
           <Route index element={<Main />} />
           <Route path={pages.회사소개.path} element={<h1>회사소개</h1>} />
