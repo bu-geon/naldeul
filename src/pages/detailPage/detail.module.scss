@@ -43,3 +43,34 @@
   width: -webkit-fill-available;
   height: -webkit-fill-available;
 }
+
+.info {
+  text-align: left;
+  padding: 20px 0;
+
+  .name {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 28px;
+  }
+
+  li {
+    padding: 20px;
+
+    .summary {
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin-bottom: 10px;
+      padding-left: 6px;
+      line-height: 1.8em;
+    }
+  }
+
+  .deepBackground {
+    background-color: #eeeeee;
+  }
+}

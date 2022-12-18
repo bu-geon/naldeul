@@ -32,7 +32,6 @@ const Detail = () => {
 
   return (
     <>
-      <p>{name}</p>
       <div className={cx('container')}>
         <img className={cx('enlargeImage', 'fitImageSize')} src={enlargedImageSrc} alt='' />
         {imageSrcs.map((src, i) => (
@@ -41,15 +40,17 @@ const Detail = () => {
           </button>
         ))}
       </div>
-      <p>특징</p>
-      <ul>
-        {featureList.map(({ summary, description }) => (
-          <li key={summary}>
-            <p>{summary}</p>
-            <p>{description}</p>
-          </li>
-        ))}
-      </ul>
+      <section className={cx('info')}>
+        <p className={cx('name')}>{name}</p>
+        <ul>
+          {featureList.map(({ summary, description }, index) => (
+            <li className={cx({ deepBackground: index % 2 })} key={summary}>
+              <p className={cx('summary')}>{summary}</p>
+              <p className={cx('description')}>{description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   )
 }
