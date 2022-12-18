@@ -17,11 +17,11 @@ const MausoleumPage = () => {
     <>
       <PageSummary category='공원묘지' />
       <div>
-        <p>경기 북부</p>
+        <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>
           {NORTHERN_MAUSOLEUMS_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '공원묘지', region, name }}>
                 <ImageCard name={name} category='공원묘지' region={region} />
               </Link>
             </li>
@@ -29,11 +29,11 @@ const MausoleumPage = () => {
         </ul>
       </div>
       <div>
-        <p>경기 남부</p>
+        <p className={cx('locationTitle')}>경기 남부</p>
         <ul className={cx('listContainer')}>
           {SOUTHERN_MAUSOLEUMS_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '공원묘지', region, name }}>
                 <ImageCard name={name} category='공원묘지' region={region} />
               </Link>
             </li>

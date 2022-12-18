@@ -17,11 +17,11 @@ const CharnelHousePage = () => {
     <>
       <PageSummary category='봉안당' />
       <div>
-        <p>경기 북부</p>
+        <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>
           {NORTHERN_CHARNEL_HOUSES_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '납골당', region, name }}>
                 <ImageCard name={name} category='납골당' region={region} />
               </Link>
             </li>
@@ -29,11 +29,11 @@ const CharnelHousePage = () => {
         </ul>
       </div>
       <div>
-        <p>경기 남부</p>
+        <p className={cx('locationTitle')}>경기 남부</p>
         <ul className={cx('listContainer')}>
           {SOUTHERN_CHARNEL_HOUSES_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '납골당', region, name }}>
                 <ImageCard name={name} category='납골당' region={region} />
               </Link>
             </li>

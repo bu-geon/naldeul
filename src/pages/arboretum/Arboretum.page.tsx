@@ -17,11 +17,11 @@ const ArboretumPage = () => {
     <>
       <PageSummary category='수목장' />
       <div>
-        <p>경기 북부</p>
+        <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>
           {NORTHERN_ARBORETUMS_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '수목장', region, name }}>
                 <ImageCard name={name} category='수목장' region={region} />
               </Link>
             </li>
@@ -29,11 +29,11 @@ const ArboretumPage = () => {
         </ul>
       </div>
       <div>
-        <p>경기 남부</p>
+        <p className={cx('locationTitle')}>경기 남부</p>
         <ul className={cx('listContainer')}>
           {SOUTHERN_ARBORETUMS_LIST.map(({ name, region }) => (
             <li key={name}>
-              <Link to={name}>
+              <Link to={name} state={{ title: '수목장', region, name }}>
                 <ImageCard name={name} category='수목장' region={region} />
               </Link>
             </li>
