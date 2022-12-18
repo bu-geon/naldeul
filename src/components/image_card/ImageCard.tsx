@@ -16,9 +16,7 @@ const ImageCard = ({ name, category, region }: Props) => {
       <div className={cx('frame')}>
         <img src={`${process.env.PUBLIC_URL}/imgs/${category}/${region}/${name}/main.jpg`} alt='' />
       </div>
-      <div>
-        <p>{name}</p>
-      </div>
+      <p>{name}</p>
     </article>
   )
 }
