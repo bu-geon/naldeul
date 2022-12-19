@@ -1,6 +1,5 @@
 {
   "name": "naldeul",
-  "homepage": "https://naldeul.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
