@@ -9,11 +9,11 @@ import { useState } from 'react'
 const cx = classNames.bind(styles)
 
 export const PAGES = {
-  회사소개: { title: '회사소개', path: 'introduction' },
-  봉안당: { title: '봉안당', path: 'charnel_house' },
+  납골당: { title: '납골당', path: 'charnel_house' },
   수목장: { title: '수목장', path: 'arboretum' },
-  봉안묘: { title: '봉안묘', path: 'mausoleum' },
-  상담신청: { title: '상담신청', path: 'consulting' },
+  공원묘지: { title: '공원묘지', path: 'cemetery_park' },
+  후불제상조: { title: '후불제상조', path: 'payAfter' },
+  '개장&이장': { title: '개장&이장', path: 'open&move' },
 }
 
 const Header = () => {

@@ -6,10 +6,18 @@ import styles from './detail.module.scss'
 
 const cx = classNames.bind(styles)
 
+interface Locations {
+  location: string
+  title: '공원묘지' | '납골당' | '수목장'
+  region: 'north' | 'south'
+  name: string
+}
+
 const Detail = () => {
-  const { title, region, name } = useLocation().state
+  const { location, title, region, name }: Locations = useLocation().state
+  const pathTo = { 공원묘지: 'cemetery_park', 납골당: 'charnel_house', 수목장: 'natural_burials' }[title]
   const imageSrcs = Array.from({ length: 4 }, (_, i) => i + 1).map(
-    (i) => `${process.env.PUBLIC_URL}/imgs/${title}/${region}/${name}/homepage${i}.jpg`
+    (i) => `${process.env.PUBLIC_URL}/imgs/${pathTo}/${region}/${location}/homepage${i}.jpg`
   )
   const [enlargedImageSrc, setEnlargedImageSrc] = useState(imageSrcs[0])
 
@@ -21,7 +29,7 @@ const Detail = () => {
   const [featureList, setFeatureList] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/imgs/${title}/${region}/${name}/features.json`)
+    fetch(`${process.env.PUBLIC_URL}/imgs/${pathTo}/${region}/${location}/features.json`)
       .then((res) => res.text())
       .then((json) => {
         const { features } = JSON.parse(json)

@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
-const NORTHERN_ARBORETUMS_LIST = CATEGORY_MAP['수목장'].filter((el) => el.region === '경기 북부')
-const SOUTHERN_ARBORETUMS_LIST = CATEGORY_MAP['수목장'].filter((el) => el.region === '경기 남부')
+const NORTHERN_ARBORETUMS_LIST = CATEGORY_MAP['수목장'].filter((el) => el.region === 'north')
+const SOUTHERN_ARBORETUMS_LIST = CATEGORY_MAP['수목장'].filter((el) => el.region === 'south')
 
 const ArboretumPage = () => {
   return (
@@ -19,10 +19,10 @@ const ArboretumPage = () => {
       <div>
         <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>
-          {NORTHERN_ARBORETUMS_LIST.map(({ name, region }) => (
+          {NORTHERN_ARBORETUMS_LIST.map(({ location, name, region }) => (
             <li key={name}>
-              <Link to={name} state={{ title: '수목장', region, name }}>
-                <ImageCard name={name} category='수목장' region={region} />
+              <Link to={name} state={{ location, title: '수목장', region, name }}>
+                <ImageCard name={name} category='수목장' region={region} location={location} />
               </Link>
             </li>
           ))}
@@ -31,10 +31,10 @@ const ArboretumPage = () => {
       <div>
         <p className={cx('locationTitle')}>경기 남부</p>
         <ul className={cx('listContainer')}>
-          {SOUTHERN_ARBORETUMS_LIST.map(({ name, region }) => (
+          {SOUTHERN_ARBORETUMS_LIST.map(({ location, name, region }) => (
             <li key={name}>
-              <Link to={name} state={{ title: '수목장', region, name }}>
-                <ImageCard name={name} category='수목장' region={region} />
+              <Link to={name} state={{ location, title: '수목장', region, name }}>
+                <ImageCard name={name} category='수목장' region={region} location={location} />
               </Link>
             </li>
           ))}

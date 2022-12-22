@@ -5,16 +5,23 @@ import styles from './imageCard.module.scss'
 const cx = classNames.bind(styles)
 
 interface Props {
+  location: string
   name: string
-  category: string
+  category: '공원묘지' | '납골당' | '수목장'
   region: string
 }
 
-const ImageCard = ({ name, category, region }: Props) => {
+const ImageCard = ({ location, name, category, region }: Props) => {
+  const pathTo = {
+    공원묘지: 'cemetery_park',
+    납골당: 'charnel_house',
+    수목장: 'natural_burials',
+  }[category]
+
   return (
     <article className={cx('imageCard')}>
       <div className={cx('frame')}>
-        <img src={`${process.env.PUBLIC_URL}/imgs/${category}/${region}/${name}/main.jpg`} alt='' />
+        <img src={`${process.env.PUBLIC_URL}/imgs/${pathTo}/${region}/${location}/main.jpg`} alt={name} />
       </div>
       <p>{name}</p>
     </article>

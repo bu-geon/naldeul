@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
-const NORTHERN_MAUSOLEUMS_LIST = CATEGORY_MAP.공원묘지.filter((el) => el.region === '경기 북부')
-const SOUTHERN_MAUSOLEUMS_LIST = CATEGORY_MAP.공원묘지.filter((el) => el.region === '경기 남부')
+const NORTHERN_MAUSOLEUMS_LIST = CATEGORY_MAP.공원묘지.filter((el) => el.region === 'north')
+const SOUTHERN_MAUSOLEUMS_LIST = CATEGORY_MAP.공원묘지.filter((el) => el.region === 'south')
 
 const MausoleumPage = () => {
   return (
@@ -19,10 +19,10 @@ const MausoleumPage = () => {
       <div>
         <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>
-          {NORTHERN_MAUSOLEUMS_LIST.map(({ name, region }) => (
+          {NORTHERN_MAUSOLEUMS_LIST.map(({ location, name, region }) => (
             <li key={name}>
-              <Link to={name} state={{ title: '공원묘지', region, name }}>
-                <ImageCard name={name} category='공원묘지' region={region} />
+              <Link to={name} state={{ location, title: '공원묘지', region, name }}>
+                <ImageCard name={name} category='공원묘지' region={region} location={location} />
               </Link>
             </li>
           ))}
@@ -31,10 +31,10 @@ const MausoleumPage = () => {
       <div>
         <p className={cx('locationTitle')}>경기 남부</p>
         <ul className={cx('listContainer')}>
-          {SOUTHERN_MAUSOLEUMS_LIST.map(({ name, region }) => (
+          {SOUTHERN_MAUSOLEUMS_LIST.map(({ location, name, region }) => (
             <li key={name}>
-              <Link to={name} state={{ title: '공원묘지', region, name }}>
-                <ImageCard name={name} category='공원묘지' region={region} />
+              <Link to={name} state={{ location, title: '공원묘지', region, name }}>
+                <ImageCard name={name} category='공원묘지' region={region} location={location} />
               </Link>
             </li>
           ))}

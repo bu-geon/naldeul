@@ -19,7 +19,7 @@ const Category = ({ title, description }: Props) => {
     setSelectedRegion(e.currentTarget.value)
   }
 
-  const pathTo = { 공원묘지: 'mausoleum', 납골당: 'charnel_house', 수목장: 'arboretum' }[title]
+  const pathTo = { 공원묘지: 'cemetery_park', 납골당: 'charnel_house', 수목장: 'natural_burials' }[title]
 
   return (
     <section className={cx('container')}>
@@ -31,13 +31,13 @@ const Category = ({ title, description }: Props) => {
             전체
           </button>
         </li>
-        <li className={cx('region', { isSelect: selectedRegion === '경기 북부' })}>
-          <button type='button' value='경기 북부' onClick={handleClickRegion}>
+        <li className={cx('region', { isSelect: selectedRegion === 'north' })}>
+          <button type='button' value='north' onClick={handleClickRegion}>
             경기 북부
           </button>
         </li>
-        <li className={cx('region', { isSelect: selectedRegion === '경기 남부' })}>
-          <button type='button' value='경기 남부' onClick={handleClickRegion}>
+        <li className={cx('region', { isSelect: selectedRegion === 'south' })}>
+          <button type='button' value='south' onClick={handleClickRegion}>
             경기 남부
           </button>
         </li>
@@ -45,11 +45,11 @@ const Category = ({ title, description }: Props) => {
       <ul>
         {CATEGORY_MAP[title]
           .filter(({ region }) => selectedRegion === '전체' || region === selectedRegion)
-          .map(({ name, region }) => (
-            <Link to={`${pathTo}/${name}`} state={{ title, region, name }} key={name}>
+          .map(({ location, name, region }) => (
+            <Link to={`${pathTo}/${name}`} state={{ title, region, name, location }} key={name}>
               <li>
                 <article className={cx('place')}>
-                  <img src={`${process.env.PUBLIC_URL}/imgs/${title}/${region}/${name}/main.jpg`} alt='' />
+                  <img src={`${process.env.PUBLIC_URL}/imgs/${pathTo}/${region}/${location}/main.jpg`} alt={name} />
                   <p>{name}</p>
                 </article>
               </li>
