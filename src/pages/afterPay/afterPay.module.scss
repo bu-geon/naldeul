@@ -1,0 +1,7 @@
+@use '../../styles' as styles;
+
+.poster {
+  @include styles.breakpoint(mobile) {
+    max-width: 100vw;
+  }
+}

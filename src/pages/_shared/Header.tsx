@@ -10,7 +10,7 @@ const cx = classNames.bind(styles)
 
 export const PAGES = {
   납골당: { title: '납골당', path: 'charnel_house' },
-  수목장: { title: '수목장', path: 'arboretum' },
+  수목장: { title: '수목장', path: 'natural_burials' },
   공원묘지: { title: '공원묘지', path: 'cemetery_park' },
   후불제상조: { title: '후불제상조', path: 'payAfter' },
   '개장&이장': { title: '개장&이장', path: 'open&move' },

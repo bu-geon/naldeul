@@ -1,0 +1,13 @@
+@use '/src/styles' as styles;
+
+.contact {
+  padding: 16px;
+  font-size: 30px;
+  color: aliceblue;
+  background-color: rgba($color: #95826b, $alpha: 0.7);
+  letter-spacing: 0.1em;
+
+  @include styles.breakpoint(mobile) {
+    font-size: 20px;
+  }
+}

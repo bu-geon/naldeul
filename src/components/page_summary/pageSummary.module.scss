@@ -1,3 +1,32 @@
 .wrapper {
-  height: 260px;
+  height: 400px;
+  background-size: cover;
+  margin-bottom: 22px;
+  height: 160px;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  background-blend-mode: multiply;
+
+  p {
+    color: ivory;
+  }
+}
+
+.category {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 0 15px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.cemetery_park {
+  background-image: url(../../assets/imgs/cemetery_park.jpg);
+}
+.charnel_house {
+  background-image: url(../../assets/imgs/charnel_house.jpg);
+}
+.natural_burials {
+  background-image: url(../../assets/imgs/natural_burials.jpg);
 }

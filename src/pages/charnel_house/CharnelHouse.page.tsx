@@ -15,7 +15,7 @@ const SOUTHERN_CHARNEL_HOUSES_LIST = CATEGORY_MAP.납골당.filter((el) => el.re
 const CharnelHousePage = () => {
   return (
     <>
-      <PageSummary category='봉안당' />
+      <PageSummary category='납골당' />
       <div>
         <p className={cx('locationTitle')}>경기 북부</p>
         <ul className={cx('listContainer')}>

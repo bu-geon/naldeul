@@ -10,6 +10,7 @@ import ArboretumPage from 'pages/arboretum'
 import MausoleumPage from 'pages/mausoleum'
 import Detail from 'pages/detailPage'
 import ScrollToTop from 'components/scrollToTop'
+import AfterPay from 'pages/afterPay'
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
           <Route path='natural_burials/:natural_burial_name' element={<Detail />} />
           <Route path={pages.공원묘지.path} element={<MausoleumPage />} />
           <Route path='cemetery_park/:cemetery_park_name' element={<Detail />} />
-          <Route path={pages.후불제상조.path} element={<h1>후불제상조</h1>} />
+          <Route path={pages.후불제상조.path} element={<AfterPay />} />
           <Route path={pages['개장&이장'].path} element={<h1>개장&이장</h1>} />
           <Route path='*' element={<div>잘못된 접근입니다.</div>} />
         </Routes>
